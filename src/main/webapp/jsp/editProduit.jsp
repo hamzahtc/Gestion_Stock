@@ -11,9 +11,27 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
 </head>
+<style>
+.container{
+	margin : 40px;
+}
+.formulaire{
+	padding : 25px;
+	background-color: #DCDCDC;
+}
+
+input {
+	border: 1px solid black;
+}
+
+</style>
 <body>
+
+
 	<% Produit produit = (Produit) request.getAttribute("produit"); %>
 	<div class="container">
+	<h3><center>Gestion de stock</center></h3>
+		<div class="container formulaire border border-dark rounded">
 	<form action="ProduitController/updateP/<%=produit.getId() %>" method="post">
 	<div class="mb-3">
 	  <label for="nom" class="form-label">Nom</label>
@@ -29,6 +47,7 @@
 	</div>
 	<input class="btn btn-warning"type="submit" value="Modifier" />
 	</form>
+	</div>
 	</div>
 </body>
 </html>

@@ -22,12 +22,22 @@ table, th, td {
 th{
 	background-color: black;
 }
+.formulaire{
+	padding : 25px;
+	background-color: #DCDCDC;
+}
+
+input {
+	border: 1px solid black;
+}
+
 </style>
 </head>
 <% List<Produit> produits = (List<Produit>) request.getAttribute("produits"); %>
 <body>
-
-	<div class="container">
+<div class="container"> 
+	<h3><center>Gestion de stock</center></h3>
+	<div class="container formulaire border border-dark rounded">
 	<form action="ProduitController" method="post">
 	<div class="mb-3">
 	  <label for="nom" class="form-label">Nom</label>
@@ -51,7 +61,7 @@ th{
 	    <th class="table-dark">Nom</th>
 	    <th class="table-dark">Quantité</th>
 	    <th class="table-dark">Prix</th>
-	    <th class="table-dark"></th>	    
+	    <th width="220px" class="table-dark"></th>	    
 	  </tr>
 	  <%
 	  	for(Produit produit : produits){
@@ -69,6 +79,6 @@ th{
 	</table>
 	
 	</div>
-	
+	</div>
 </body>
 </html>

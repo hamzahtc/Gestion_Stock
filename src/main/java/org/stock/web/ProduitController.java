@@ -36,6 +36,7 @@ public class ProduitController extends HttpServlet {
 		List<String> list = Arrays.asList(uri.split("/"));
 		if (list.contains("delete")) {
 			produitService.remove(Integer.parseInt(list.get(list.size() - 1)));
+			response.sendRedirect(request.getContextPath() + "/ProduitController");
 
 		} else if (list.contains("edit")) {
 			Produit produit = produitService.get(Integer.parseInt(list.get(list.size() - 1)));
